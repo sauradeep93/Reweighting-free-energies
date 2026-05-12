@@ -77,29 +77,6 @@ data/               See Zenodo DOI above
 
 ---
 
-## Methods
-
-Reweighting uses the Zwanzig perturbation identity:
-
-$$\Delta A(z) = -k_\mathrm{B}T \ln \langle e^{-\beta \Delta U} \rangle_{A,\xi=z}$$
-
-Three estimators are implemented:
-
-1. **MBAR** — multistate Bennett acceptance ratio
-2. **Gaussian approximation** (Eq. 16): $\Delta A = k_\mathrm{B}T\!\left(\beta\mu_{\Delta U} - \beta^2\sigma_{\Delta U}^2/2\right)$
-3. **Energy-only** (Eq. 17): $\Delta A = \langle U_B - U_A \rangle_{A,\xi=z}$
-
-Standard errors for the Gaussian estimator use the delta method on the importance-weighted ratio estimator (Dietschreit *et al.*, Eqs. 6–9):
-
-$$\mathrm{SE}(\mu) = \sqrt{\sum_i p_i^2\, (\Delta U_i - \mu)^2}$$
-
-with Bessel-corrected weighted variance (denominator $= 1 - \sum_i p_i^2$).
-
-Weight quality per umbrella window is assessed via the normalized Shannon entropy:
-
-$$S(z) = \frac{-\sum_i p_i \ln p_i}{\ln N_z} \in [0, 1]$$
-
----
 
 ## Requirements
 
@@ -108,7 +85,19 @@ python >= 3.9
 numpy
 scipy
 matplotlib
-pymbar
+adaptive_sampling
+```
+
+- **`adaptive_sampling`** — provides MBAR implementation and unit conversions (`adaptive_sampling.processing_tools.mbar`, `adaptive_sampling.processing_tools.utils`, `adaptive_sampling.units`). Install via pip:
+  ```bash
+  pip install adaptive-sampling
+  ```
+
+- **`nff`** (NeuralForceField) — used for umbrella sampling simulations. Install from source:
+  ```bash
+  git clone https://github.com/learningmatter-mit/NeuralForceField
+  cd NeuralForceField
+  pip install -e .
 ```
 
 ---
