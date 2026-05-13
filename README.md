@@ -94,12 +94,12 @@ If you use this code or data, please cite:
 
 ```bibtex
 @article{majumdar2026,
-  author  = {Majumdar, Sauradeep and others},
+  author  = {Majumdar, Sauradeep and Steiner, Miguel and Dietschriet, Johannes C.B. and Roy, Swagata and Willimetz, Daniel and Grajciar, Lukaš and G\'omez-Bombarelli, Rafael },
   title   = {Reweighting free energy profiles between universal machine learning
              interatomic potentials for fast consensus building},
-  journal = {[Journal]},
+  journal = {arxiv preprint},
   year    = {2026},
-  doi     = {[DOI]}
+  doi     = {}
 }
 ```
 
