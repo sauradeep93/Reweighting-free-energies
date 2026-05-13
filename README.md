@@ -9,7 +9,7 @@ This repository contains the code and data used in the article:
 
 ## Overview
 
-Analysis scripts for reweighting umbrella sampling potential of mean force (PMF) profiles computed with one source MLIP (MACE-MP0) onto a suite of target MLIPs, using MBAR weights and perturbation theory. The studied system is a Li-ion diffusing through a water-solvated zeolite framework (601 atoms total) at T = 450 K, for battery applications
+Analysis scripts for reweighting umbrella sampling potential of mean force (PMF) profiles computed with one source MLIP (MACE-MP0) onto a suite of target MLIPs, using MBAR weights and perturbation theory. The studied system is a Li-ion transport in a nanoconfined electrolyte (601 atoms total) at T = 450 K.
 
 ---
 
