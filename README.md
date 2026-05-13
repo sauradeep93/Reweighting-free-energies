@@ -19,12 +19,14 @@ Processed umbrella sampling frames, MBAR weights, and parity plot data are depos
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20142456.svg)](https://doi.org/10.5281/zenodo.20142456)
 
-The Zenodo deposit contains four folders:
+The Zenodo deposit contains the following:
 
 - **`zeolite_structure/`** — CIF file of the studied Li⁺-in-zeolite system
 - **`umbrella_sampling_data/`** — MACE-MATPES US simulation output and pre-computed MACE-MP0 PMF
 - **`data_540000_frames/`** — source and target MLIP potential energies for 540,000 reweighting frames (10,000 frames × 54 windows), for 7 target MLIPs
 - **`data_parity_plots/`** — DFT and MLIP energies and forces for 1,100 structures used in parity plots
+- **`MACE-finetuned/`** - The finetuned MLIP developed in this work, along with the training data used.
+- **`MBAR_weights/`** - The MACE-MP0 unbiased MBAR weights obtained for the 540,000 downsampled frames 
 
 ---
 
