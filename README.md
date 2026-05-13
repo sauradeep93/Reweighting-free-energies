@@ -1,4 +1,4 @@
-# Reweighting-free-energies
+# Reweighting Free Energies
 
 This repository contains the code and data used in the article:
 
@@ -9,34 +9,22 @@ This repository contains the code and data used in the article:
 
 ## Overview
 
-Analysis scripts for reweighting umbrella sampling potential of mean force (PMF) profiles computed with one source MLIP (MACE-MP0) onto a suite of target MLIPs, using MBAR weights and perturbation theory. The studied system is a Li-ion transport in a nanoconfined electrolyte (601 atoms total) at T = 450 K.
+Analysis scripts for reweighting umbrella sampling potential of mean force (PMF) profiles computed with one source MLIP (MACE-MP0) onto a suite of target MLIPs, using MBAR weights and perturbation theory. The studied system is Li-ion transport in a nanoconfined electrolyte (601 atoms total) at T = 450 K.
 
 ---
 
 ## Data
 
-Processed umbrella sampling frames (MBAR weights and energy differences) are deposited on Zenodo:
+Processed umbrella sampling frames, MBAR weights, and parity plot data are deposited on Zenodo:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20142456.svg)](https://doi.org/10.5281/zenodo.20142456)
 
-Download and place the files under `data/` before running the scripts. Expected layout:
+The Zenodo deposit contains four folders:
 
-```
-data/
-  april9_10000_downsampled_files/
-    selected_frames_window_{0..53}.npz   # MBAR weights + ΔU (source MLIP)
-  energy_frames_npz_{mlip}/
-    selected_frames_window_{0..53}.npz   # ΔU for each target MLIP
-  pmf_april9_umb_mace-mp0.npz            # source PMF (MACE-MP0)
-  pmf_jan16_umb_mace-matpes.npz          # target PMF from direct US (MACE-MATPES)
-  pmf_mace-matpes_dec2025.npz            # MBAR-reweighted PMF (MACE-MATPES)
-  dft_li_data/
-    dft_li_1100_frames_energy_PBE.npz    # DFT PBE reference energies
-```
-
-Each `selected_frames_window_N.npz` contains:
-- `pot_energy_A_filtered` — source MLIP potential energies (eV)
-- `pot_energy_B_filtered` — target MLIP potential energies (eV)
+- **`zeolite_structure/`** — CIF file of the studied Li⁺-in-zeolite system
+- **`umbrella_sampling_data/`** — MACE-MATPES US simulation output and pre-computed MACE-MP0 PMF
+- **`data_540000_frames/`** — source and target MLIP potential energies for 540,000 reweighting frames (10,000 frames × 54 windows), for 7 target MLIPs
+- **`data_parity_plots/`** — DFT and MLIP energies and forces for 1,100 structures used in parity plots
 
 ---
 
@@ -47,7 +35,6 @@ scripts/
   reweighting/      PMF reweighting and entropy analysis
   barriers_jsd/     Free energy barriers and Jensen-Shannon divergence
   parity_plots/     DFT vs MLIP energy and force parity plots
-data/               See Zenodo DOI above
 ```
 
 ---
@@ -73,10 +60,9 @@ data/               See Zenodo DOI above
 | Script | Description |
 |---|---|
 | `plot_force_parity_metafigure.py` | Force parity plots for all 8 MLIPs vs DFT (PBE+D3) |
-| `plot_energy_parity_8mlips.py` | Energy parity plots for all 8 MLIPs vs DFT (PBE+D3) |
+| `plot_energy_parity_metafigure.py` | Energy parity plots for all 8 MLIPs vs DFT (PBE+D3) |
 
 ---
-
 
 ## Requirements
 
@@ -88,7 +74,7 @@ matplotlib
 adaptive_sampling
 ```
 
-- **`adaptive_sampling`** — provides MBAR implementation and unit conversions (`adaptive_sampling.processing_tools.mbar`, `adaptive_sampling.processing_tools.utils`, `adaptive_sampling.units`). Install via pip:
+- **`adaptive_sampling`** — provides MBAR implementation and unit conversions. Install via pip:
   ```bash
   pip install adaptive-sampling
   ```
@@ -98,7 +84,7 @@ adaptive_sampling
   git clone https://github.com/learningmatter-mit/NeuralForceField
   cd NeuralForceField
   pip install -e .
-```
+  ```
 
 ---
 
@@ -122,4 +108,5 @@ If you use this code or data, please cite:
 ## License
 
 MIT
+
 
