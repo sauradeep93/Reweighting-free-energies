@@ -90,7 +90,7 @@ adaptive_sampling
 
 ## Citation
 
-If you use this code or data, please cite:
+If you find our work helpful, please cite:
 
 ```bibtex
 @article{majumdar2026,
