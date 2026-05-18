@@ -95,13 +95,14 @@ adaptive_sampling
 If you find our work helpful, please cite:
 
 ```bibtex
-@article{majumdar2026,
-  author  = {Majumdar, Sauradeep and Steiner, Miguel and Dietschriet, Johannes C.B. and Roy, Swagata and Willimetz, Daniel and Grajciar, Lukaš and G\'omez-Bombarelli, Rafael },
-  title   = {Reweighting free energy profiles between universal machine learning
-             interatomic potentials for fast consensus building},
-  journal = {arxiv preprint},
-  year    = {2026},
-  doi     = {}
+@misc{majumdar2026reweightingmlips,
+      title={Reweighting free energy profiles between universal machine learning interatomic potentials for fast consensus building}, 
+      author={Sauradeep Majumdar and Miguel Steiner and Johannes C. B. Dietschreit and Swagata Roy and Daniel Willimetz and Lukaš Grajciar and Rafael Gómez-Bombarelli},
+      year={2026},
+      eprint={2605.15630},
+      archivePrefix={arXiv},
+      primaryClass={physics.chem-ph},
+      url={https://arxiv.org/abs/2605.15630}, 
 }
 ```
 
