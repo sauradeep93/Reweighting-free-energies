@@ -38,7 +38,7 @@ _mbar_w_by_win = [_npz_w[k]  for k in _w_keys]
 _cv_by_win     = [_npz_cv[k] for k in _cv_keys]
 
 # =============================================================================
-# PANEL a — Entropy (Eq. 13-14)
+# PANEL a — Entropy
 # =============================================================================
 _entropy_colors_list = ["#0000a5", "#ac5775", "#ffaf1e", "#FF5349", "#228B22", "#1f77b4", "#808080"]
 dir_info = {
@@ -95,7 +95,7 @@ for directory_name, label in dir_info.items():
     print(f"  {label}: {len(valid_z)} bins")
 
 # =============================================================================
-# PANEL b — MATPES comparison with Gaussian uncertainty
+# PANEL b — MATPES PMFs comparison with Gaussian uncertainty
 # =============================================================================
 npz_base  = np.load("/home/gridsan/smajumdar/jobs/completed/april9_umb_0.8ns_55h2o_1li/pmf_april9_umb_mace-mp0.npz")
 grid_base = npz_base["grid"]
@@ -217,7 +217,7 @@ color_gauss   = "#2CA02C"
 color_meangap = "#FFE900"
 
 # =============================================================================
-# Figure: 1×2
+# Metafigure: 1×2
 # =============================================================================
 def style_pmf_ax(ax):
     ax.set_xticks(np.arange(-7.5, 7.5 + 1e-9, 2.5))
