@@ -61,8 +61,8 @@ The Zenodo deposit contains the following:
 
 | Script | Description |
 |---|---|
-| `plot_force_parity_metafigure.py` | Force parity plots for all 8 MLIPs vs DFT (PBE+D3) |
-| `plot_energy_parity_metafigure.py` | Energy parity plots for all 8 MLIPs vs DFT (PBE+D3) |
+| `plot_force_parity_metafigure.py` | Force parity plots for all MLIPs vs DFT (PBE+D3) |
+| `plot_energy_parity_metafigure.py` | Energy parity plots for all MLIPs vs DFT (PBE+D3) |
 
 ---
 
