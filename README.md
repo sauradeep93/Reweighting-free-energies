@@ -33,17 +33,17 @@ The Zenodo deposit contains the following:
 ## Repository Structure
 
 ```
-scripts/
   reweighting/      PMF reweighting and entropy analysis
   barriers_jsd/     Free energy barriers and Jensen-Shannon divergence
   parity_plots/     DFT vs MLIP energy and force parity plots
+
 ```
 
 ---
 
-## Scripts
+## Scripts used in the associated work
 
-### `scripts/reweighting/`
+### `reweighting/`
 
 | Script | Description |
 |---|---|
@@ -51,13 +51,13 @@ scripts/
 | `plot_entropy_matpes_metafigure.py` | Shannon entropy S(z) + Gaussian ΔA metafigure for MACE-MATPES |
 | `plot_pmf_energyonly_all_mlips_metafigure.py` | Energy-only PMF correction for all MLIPs (SI figure) |
 
-### `scripts/barriers_jsd/`
+### `barriers_jsd/`
 
 | Script | Description |
 |---|---|
 | `plot_jsd_scatter_metafigure_3split.py` | Main figure: JSD heatmap + free energy barriers scatter |
 
-### `scripts/parity_plots/`
+### `parity_plots/`
 
 | Script | Description |
 |---|---|
