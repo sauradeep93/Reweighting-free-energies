@@ -80,7 +80,7 @@ mxi_inv = np.array([[0.14712433, 0.14696048, 0.14683356, 0.14680343, 0.14678452,
        5.23119092e-07, 2.84507382e-07, 1.60203398e-07]])
 
 lambda_xi = np.sqrt(units.h_in_SI * units.h_in_SI * mxi_inv[0] /
-                    (2.0 * np.pi * units.atomic_to_kg * units.kB_in_SI * T))#can be ignored for simplicity
+                    (2.0 * np.pi * units.atomic_to_kg * units.kB_in_SI * T))#important to include this term: thermal de Broglie wavelength associated with motion along the CV
 lambda_xi *= 1e10
 
 # =============================================================================
