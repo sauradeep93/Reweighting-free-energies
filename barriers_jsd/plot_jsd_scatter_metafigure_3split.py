@@ -52,8 +52,8 @@ _min_bin, _max_bin = 20, -20
 _ts_base = int(np.where(pmf_base == np.amax(pmf_base[_min_bin:_max_bin]))[0][0])
 print(f"Base MACE-MP0 TS: bin {_ts_base}, z = {grid_base[_ts_base]:.3f} Å")
 
-# --- mxi_inv --- #obtained from Majumdar et al.(https://doi.org/10.1021/acs.chemmater.5c02940) #can also be ignored for simplicity
-mxi_inv = np.array([[0.14712433, 0.14696048, 0.14683356, 0.14680343, 0.14678452,
+# --- mxi_inv --- #obtained from Majumdar et al.(https://doi.org/10.1021/acs.chemmater.5c02940) #inverse mass associated with the CV; usually obtained from enhanced sampling output files
+mxi_inv[0] = np.array([[0.14712433, 0.14696048, 0.14683356, 0.14680343, 0.14678452,
        0.14682748, 0.14674705, 0.14665919, 0.1467685 , 0.14720038,
        0.14789841, 0.14756012, 0.14706142, 0.14692932, 0.14749206,
        0.15070553, 0.15299035, 0.14967054, 0.14740485, 0.14696622,
@@ -63,21 +63,7 @@ mxi_inv = np.array([[0.14712433, 0.14696048, 0.14683356, 0.14680343, 0.14678452,
        0.14670261, 0.14668833, 0.14672784, 0.14675579, 0.14677694,
        0.14679841, 0.14683466, 0.14683874, 0.14678778, 0.14671568,
        0.14664097, 0.1466181 , 0.14659731, 0.14664953, 0.14669839,
-       0.14661507, 0.14646551, 0.14641242, 0.1464066 , 0.14640571],
-      [1.49867877e-05, 5.66914385e-06, 3.00909394e-06, 2.22207074e-06,
-       2.12867597e-06, 2.35773340e-06, 2.12327800e-06, 1.66644442e-06,
-       2.39574860e-06, 5.84395879e-06, 9.13275265e-06, 7.95348953e-06,
-       4.35918553e-06, 3.33894750e-06, 1.48701195e-05, 3.43163694e-05,
-       4.04633365e-05, 3.07086237e-05, 1.14831531e-05, 3.16435438e-06,
-       2.06396261e-06, 2.05528827e-06, 2.00584601e-06, 1.98063939e-06,
-       1.97903113e-06, 2.44913716e-06, 3.41236581e-06, 4.05725836e-06,
-       3.30268591e-06, 2.26071648e-06, 2.16352873e-06, 1.80747062e-06,
-       2.08002396e-06, 2.09852402e-06, 1.74969221e-06, 1.86116740e-06,
-       1.78038787e-06, 1.71637777e-06, 1.61990397e-06, 1.49343335e-06,
-       1.36832216e-06, 1.28634149e-06, 1.30078056e-06, 1.49563866e-06,
-       1.73447974e-06, 1.67007957e-06, 1.59605134e-06, 1.57666324e-06,
-       1.86209504e-06, 2.23595053e-06, 2.49499195e-06, 1.69626059e-06,
-       5.23119092e-07, 2.84507382e-07, 1.60203398e-07]])
+       0.14661507, 0.14646551, 0.14641242, 0.1464066 , 0.14640571]])
 
 lambda_xi = np.sqrt(units.h_in_SI * units.h_in_SI * mxi_inv[0] /
                     (2.0 * np.pi * units.atomic_to_kg * units.kB_in_SI * T))#important to include this term: thermal de Broglie wavelength associated with motion along the CV
@@ -239,7 +225,7 @@ for directory, label, color in energy_only_mlips:
 print("Loading simulated PMFs ...")
 for npz_path, label, color, gkey, pkey in simulated_mlips:
     pmf_s = load_simulated_pmf(npz_path, gkey, pkey)
-    if "jan16" in npz_path:
+    if "jan16" in npz_path: #replace "jan16" with your specific folder name
         pmf_dict[MATPES_SIM_LABEL] = pmf_s   # simulated → JSD
     dA, _, TS       = reaction_freeE(pmf_s, T=T)
     dA_act, _, _    = activation_freeE(pmf_s, lambda_xi, T=T, TS=TS)
