@@ -115,7 +115,7 @@ all_UA = np.concatenate(pot_eners_A)
 all_UB = np.concatenate(pot_eners_B)
 
 diff_AB=all_UB-all_UA #UB-UA
-rel_diff_AB=diff_AB-diff_AB.min()#to account for offset
+rel_diff_AB=diff_AB-diff_AB.min()#to account for offset between different MLIPs
 print(f"Energy Diff Stats (kJ/mol): Min={rel_diff_AB.min():.2f}, Max={rel_diff_AB.max():.2f}, Mean={rel_diff_AB.mean():.2f}")
 print(rel_diff_AB)
 
