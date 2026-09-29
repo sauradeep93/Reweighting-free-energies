@@ -17,7 +17,7 @@ Analysis scripts for reweighting umbrella sampling potential of mean force (PMF)
 
 Processed umbrella sampling frames, MBAR weights, and parity plot data are deposited on Zenodo:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20142456.svg)](https://doi.org/10.5281/zenodo.20142456)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20142456.svg)](https://doi.org/10.5281/zenodo.20142455)
 
 The Zenodo deposit contains the following:
 
