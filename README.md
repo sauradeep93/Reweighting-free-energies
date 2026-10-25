@@ -1,4 +1,4 @@
-# MLIP-driven free energy reweighting
+# Reweighting free energies
 
 This repository contains the code and data used in the article:
 
